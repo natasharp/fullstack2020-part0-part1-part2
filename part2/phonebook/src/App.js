@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
 import Persons from './components/Persons'
+import personService from './services/persons'
 
 const App = () => {
   const [persons, setPersons] = useState([])
@@ -11,12 +11,9 @@ const App = () => {
   const [newFilter, setNewFilter] = useState('')
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3001/persons')
-      .then(response => {
-        console.log('promise fulfilled')
-        setPersons(response.data)
-      })
+    personService
+      .getAll()
+      .then(initialPersons => { setPersons(initialPersons) })
   }, [])
 
   const addPerson = (event) => {
@@ -26,13 +23,26 @@ const App = () => {
       number: newPhone
     }
     if (persons.map(person => person.name).indexOf(nameObject.name) === -1) {
-      setPersons(persons.concat(nameObject))
-      setNewName('')
-      setNewPhone('')
+      personService
+        .create(nameObject)
+        .then(returnedPerson => {
+          setPersons(persons.concat(returnedPerson))
+          setNewName('')
+          setNewPhone('')
+        })
+
     } else {
-      window.alert(`${nameObject.name} is already added to phonebook`)
+      const result = window.confirm(`${nameObject.name} is already added to phonebook, replace the old number with a new one?`)
+      if (result) {
+        const id = (persons.filter(person => person.name === nameObject.name))[0].id
+        personService.update(id, nameObject)
+          .then(returnedPerson => { setPersons(persons.map(person => person.id !== id ? person : returnedPerson)) })
+          .then(setNewName(''))
+          .then(setNewPhone(''))
+      }
     }
   }
+
   const handleNameInput = (event) => setNewName(event.target.value)
   const handlePhoneInput = (event) => setNewPhone(event.target.value)
   const handleFilterInput = (event) => setNewFilter(event.target.value)
@@ -53,7 +63,8 @@ const App = () => {
       <h3>Numbers</h3>
       <Persons
         persons={persons}
-        filter={newFilter} />
+        filter={newFilter}
+        setPersons={setPersons} />
     </div>
   )
 }
