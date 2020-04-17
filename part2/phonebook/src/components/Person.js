@@ -1,22 +1,11 @@
 import React from 'react'
-import personService from '../services/persons'
 
-const Person = ({ person, setPersons, persons }) => {
-    const handleClick = () => {
-        const result = window.confirm(`Delete ${person.name}`);
-        if (result === true) {
-            personService
-                .remove(person.id)
-                .then(setPersons(persons.filter(persona => persona.id !== person.id)))
-                .catch(error => {     
-                     alert(      
-                      `the person '${person.name}' was already deleted from server`      )    
-                  setPersons(persons.filter(p => p.id !== person.id))    })
-        }
-    }
+const Person = ({ person, removePersonHandler }) => {
     return (
         <div>
-            {person.name} {person.number} <button onClick={handleClick}>delete</button>
+            {person.name}<span> </span>
+            {person.number}<span> </span>
+            <button onClick={() => removePersonHandler(person)}>delete</button>
         </div>
     )
 }

@@ -18,7 +18,8 @@ function App() {
   }, [])
 
   const handleFilterInput = (event) => setNewFilter(event.target.value)
-  const filteredCountries = newFilter === '' ? [] : countries.filter(country => country.name.toLowerCase().includes(newFilter.toLowerCase()))
+  const handleSettingFilter = (country) => setNewFilter(country.name)
+  const countriesToDisplay = newFilter === '' ? [] : countries.filter(country => country.name.toLowerCase().includes(newFilter.toLowerCase()))
 
   return (
     <div>
@@ -26,8 +27,8 @@ function App() {
         value={newFilter}
         handler={handleFilterInput} />
       <Countries
-        countries={filteredCountries}
-        setNewFilter = {setNewFilter}
+        countries={countriesToDisplay}
+        settingFilterHandler = {handleSettingFilter}
       />
     </div>
   );

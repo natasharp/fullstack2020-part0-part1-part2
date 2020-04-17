@@ -2,10 +2,10 @@ import React from 'react'
 import Country from './Country'
 import CountryDetails from './CountryDetails'
 
-const Countries = ({ countries, setNewFilter }) => {
+const Countries = ({ countries, settingFilterHandler }) => {
 
     if (countries.length === 0) {
-        return (<div></div>)
+        return null
     }
     if (countries.length > 10) {
         return (
@@ -25,7 +25,7 @@ const Countries = ({ countries, setNewFilter }) => {
                 <Country
                     key={country.name}
                     country={country}
-                    handleClick={() => setNewFilter(country.name)}
+                    handleClick={() => settingFilterHandler(country)}
                 />
             )}
         </div>

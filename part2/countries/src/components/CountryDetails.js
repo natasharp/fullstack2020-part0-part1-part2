@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-
-
 const CountryDetails = ({ country }) => {
-    const [weather, setWeather] = useState({weather_icons: []})
-    const key = process.env.REACT_APP_WEATHER_API_KEY  
-    const CancelToken = axios.CancelToken;
-    const source = CancelToken.source();
+    const [weather, setWeather] = useState({ weather_icons: [] })
+    const key = process.env.REACT_APP_WEATHER_API_KEY
     const hook = () => {
         axios
-            .get(`http://api.weatherstack.com/current?access_key=${key}&query=${country.name}`, {
-                cancelToken: source.token
-              })
+            .get(`http://api.weatherstack.com/current?access_key=${key}&query=${country.name}`)
             .then(response => {
                 setWeather(response.data.current)
             })
