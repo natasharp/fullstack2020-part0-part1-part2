@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+    "mongoose-unique-validator": "^2.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
@@ -18,8 +19,6 @@
     "eject": "react-scripts eject",
     "server": "json-server -p3001 --watch db.json",
     "build:ui": "rmdir build /s /q && npm run build && xcopy build ..\\..\\..\\fullstack2020-backend\\build /s /e /y /i",
-    "deploy": "git push heroku master",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",    
     "logs:prod": "heroku logs --tail"
   },
   "proxy": "http://localhost:3001",

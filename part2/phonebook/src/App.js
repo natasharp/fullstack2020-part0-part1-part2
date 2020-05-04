@@ -25,37 +25,30 @@ const App = () => {
       name: newName,
       number: newPhone
     }
-    if (persons
-      .map(person => person.name.toLowerCase())
-      .indexOf(newPerson.name.toLowerCase()) === -1) {
-      addPerson(newPerson)
+    const person = persons.find(person => person.name === newPerson.name)
+    if (person) {
+      updatePerson(person.id, newPerson)
     } else {
-      updatePerson(newPerson)
+      personService.create(newPerson)
+        .then(returnedPerson => {
+          setPersons(persons.concat(returnedPerson))
+          setNewName('')
+          setNewPhone('')
+          addSuccessNotification(returnedPerson)
+        })
+        .catch(error =>
+          addErrorMessage(error.response.data.error))
     }
   }
 
-  const addPerson = (person) => {
-    personService
-      .create(person)
-      .then(returnedPerson => {
-        setPersons(persons.concat(returnedPerson))
-        setNewName('')
-        setNewPhone('')
-        addSuccessNotification(returnedPerson)
-      })
-  }
-
-  const updatePerson = (newPersonInfo) => {
-    const person = persons.find(person => person.name.toLowerCase() === newPersonInfo.name.toLowerCase())
+  const updatePerson = (id, person) => {
     const result = window.confirm(`${person.name} is already added to phonebook, replace the old number with a new one?`)
     if (result) {
-      personService.update(person.id, newPersonInfo)
-        .then(returnedPerson => { setPersons(persons.map(p => p.id !== person.id ? p : returnedPerson)) })
-        .then(setNewName(''))
-        .then(setNewPhone(''))
-        .catch(error => {
-          addDeleteErrorNotification(person)
-          setPersons(persons.filter(p => p.id !== person.id))
+      personService.update(id, person)
+        .then(returnedPerson => {
+          setPersons(persons.map(p => p.id !== id ? p : returnedPerson))
+          setNewName('')
+          setNewPhone('')
         })
     }
   }
@@ -71,17 +64,17 @@ const App = () => {
         .remove(person.id)
         .then(setPersons(persons.filter(p => p.id !== person.id)))
         .catch(error => {
-          addDeleteErrorNotification(person)
+          addErrorMessage(`Information of '${person.name}' has already been removed from server`)
           setPersons(persons.filter(p => p.id !== person.id))
         })
     }
   }
 
-  const addDeleteErrorNotification = (person) => {
-    setNewNotification(`Information of '${person.name}' has already been removed from server`)
+  const addErrorMessage = (message) => {
+    setNewNotification(message)
     setTimeout(() => {
       setNewNotification(null)
-    }, 5000)
+    }, 10000)
   }
 
   const addSuccessNotification = (person) => {
