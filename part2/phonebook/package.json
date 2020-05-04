@@ -17,9 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -p3001 --watch db.json",
-    "build:ui": "rmdir build /s /q && npm run build && xcopy build ..\\..\\..\\fullstack2020-backend\\build /s /e /y /i",
-    "logs:prod": "heroku logs --tail"
+    "server": "json-server -p3001 --watch db.json"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {

@@ -50,6 +50,8 @@ const App = () => {
           setNewName('')
           setNewPhone('')
         })
+        .catch(error =>
+          addErrorMessage(error.response.data.error))
     }
   }
 
@@ -74,7 +76,7 @@ const App = () => {
     setNewNotification(message)
     setTimeout(() => {
       setNewNotification(null)
-    }, 10000)
+    }, 5000)
   }
 
   const addSuccessNotification = (person) => {
