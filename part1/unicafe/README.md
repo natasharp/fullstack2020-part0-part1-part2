@@ -1,4 +1,4 @@
-## Unicafe is simple React app created with [Create React App](https://github.com/facebook/create-react-app) tool for collecting feedback from customers and dispalying statistics about the gathered feedback.
+## Unicafe is small and simple React app created with [Create React App](https://github.com/facebook/create-react-app) tool for collecting feedback from customers and dispalying statistics about the gathered feedback.
 
 ## Available Scripts
 

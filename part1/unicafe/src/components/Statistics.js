@@ -1,5 +1,5 @@
 import React from 'react'
-import StatisticalValue from './components/StatisticalValue'
+import StatisticalValue from './StatisticalValue'
 
 const Statistics = ({ good, neutral, bad }) => {
     const count = good + bad + neutral

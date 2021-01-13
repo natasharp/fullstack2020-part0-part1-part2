@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Button from './components/Button'
 import Title from './components/Title'
+import Statistics from './components/Statistics'
 
 const App = () => {
     const [good, setGood] = useState(0)
@@ -13,7 +14,7 @@ const App = () => {
 
     return (
         <div>
-            <Display value='give feedback' />
+            <Title value='give feedback' />
             <Button
                 handleClick={increaseGoodByOne}
                 text='good'
