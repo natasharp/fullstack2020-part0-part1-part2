@@ -1,3 +1,5 @@
+Countries is simple React app for searching and displaying details of searched countries. Data are provided using an external [REST API](https://restcountries.eu/).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

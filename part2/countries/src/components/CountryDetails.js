@@ -4,12 +4,16 @@ import axios from 'axios'
 const CountryDetails = ({ country }) => {
     const [weather, setWeather] = useState({ weather_icons: [] })
     const key = process.env.REACT_APP_WEATHER_API_KEY
+    if (!key) {
+        console.log('API key missing!')
+    }
+
     const hook = () => {
         axios
             .get(`http://api.weatherstack.com/current?access_key=${key}&query=${country.name}`)
             .then(response => {
                 setWeather(response.data.current)
-            })
+            }).catch((error) => console.log(error))
     }
     useEffect(hook, [])
 
@@ -26,10 +30,12 @@ const CountryDetails = ({ country }) => {
                     </li>)}
             </ul>
             <img id="flag-img" src={country.flag} alt='flag' />
-            <h3>Weather in {country.capital}</h3>
-            <div>temperature: {weather.temperature} celcius</div>
-            <img id="flag-img" src={weather.weather_icons[0]} alt='weather icon' />
-            <div>wind: {weather.wind_speed} mph direction {weather.wind_dir}</div>
+            {weather ? <div>
+                <h3>Weather in {country.capital}</h3>
+                <div>temperature: {weather.temperature} celcius</div>
+                <img id="flag-img" src={weather.weather_icons[0]} alt='weather icon' />
+                <div>wind: {weather.wind_speed} mph direction {weather.wind_dir}</div>
+            </div> : null}
         </div>
     )
 }
