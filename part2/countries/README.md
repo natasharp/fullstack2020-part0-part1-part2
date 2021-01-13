@@ -1,4 +1,4 @@
-## Countries is simple React app for searching and displaying details of searched countries. Data are provided using an external [REST Countries API](https://restcountries.eu/) and [World Weather Data API](https://weatherstack.com/). This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Countries is simple React app for searching and displaying details of searched countries. Data are provided using an external [REST Countries API](https://restcountries.eu/) and [World Weather Data API](https://weatherstack.com/). This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Before Starting 
 
