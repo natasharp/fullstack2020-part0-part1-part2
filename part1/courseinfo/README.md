@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Courseinfo is small and simple React app created with [Create React App](https://github.com/facebook/create-react-app) tool for displaying course information.
 
 ## Available Scripts
 
