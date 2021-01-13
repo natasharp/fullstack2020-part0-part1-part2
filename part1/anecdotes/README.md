@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Anecdotes app is small and simple React app, that was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). App is displaying anecdote of day, and provides voting for different anecdotes. 
 
 ## Available Scripts
 
