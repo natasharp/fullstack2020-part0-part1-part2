@@ -1,5 +1,5 @@
 
-## Courseinfo is small and simple React app created with [Create React App](https://github.com/facebook/create-react-app) tool for displaying course information.
+Courseinfo is small and simple React app created with [Create React App](https://github.com/facebook/create-react-app) tool for displaying course information.
 
 ## Available Scripts
 
