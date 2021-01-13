@@ -1,8 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Phonebook is simple and small React app for saving contacts. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run server`
+
+Starts json-server on port 3001 and provides initial data for phonebook React app in development mode. 
 
 ### `npm start`
 
