@@ -1,4 +1,4 @@
-# [Full Stack Open 2020](https://fullstackopen.com/en/)
+## [Full Stack Open 2020](https://fullstackopen.com/en/)
 
 ## Part 0 - [Fundamentals of Web apps](https://fullstackopen.com/en/part0)
 
