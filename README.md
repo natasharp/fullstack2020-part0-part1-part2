@@ -39,7 +39,7 @@ Solutions:
 
 ## Additional parts of the course are located in their own repositories:
 
-<center>
+
 | repository | Full Stack Open 2020 Course Part |
 | ----- | ------------- |
 | [part3](https://github.com/natasharp/fullstack2020-part3) | [Programming a server with NodeJS and Express](https://fullstackopen.com/en/part3) |
@@ -51,4 +51,3 @@ Solutions:
 | [part9](https://github.com/natasharp/fullstack2020-part9) | [TypeScript](https://fullstackopen.com/en/part9) |
 | part10 | [React Native](https://fullstackopen.com/en/part2) |
 | part11 | [CI/CD](https://fullstackopen.com/en/part2) |
-</center>
