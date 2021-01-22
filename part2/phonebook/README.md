@@ -4,10 +4,6 @@ Phonebook is simple and small React app for saving contacts. This project was bo
 
 In the project directory, you can run:
 
-### `npm run server`
-
-Starts json-server on port 3001 and provides initial data for phonebook React app in development mode. 
-
 ### `npm start`
 
 Runs the app in the development mode.<br />
