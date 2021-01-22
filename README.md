@@ -37,12 +37,12 @@ Solutions:
 
 | repository | Full Stack Open 2020 Course Part |
 | ----- | ------------- |
-| part3 | [Programming a server with NodeJS and Express](https://fullstackopen.com/en/part3) |
-| part4 | [Testing Express servers and user administration](https://fullstackopen.com/en/part4) |
-| part5 | [Testing React apps](https://fullstackopen.com/en/part5) |
-| part6 | [Redux](https://fullstackopen.com/en/part6) |
-| part7 | [React router, custom hooks, styling app with CSS and webpack](https://fullstackopen.com/en/part7) |
-| part8 | [GraphQL](https://fullstackopen.com/en/part8) |
-| part9 | [TypeScript](https://fullstackopen.com/en/part9) |
+| [part3](https://github.com/natasharp/fullstack2020-part3) | [Programming a server with NodeJS and Express](https://fullstackopen.com/en/part3) |
+| [part4](https://github.com/natasharp/fullstack2020-part4) | [Testing Express servers and user administration](https://fullstackopen.com/en/part4) |
+| [part5](https://github.com/natasharp/fullstack2020-part5) | [Testing React apps](https://fullstackopen.com/en/part5) |
+| [part6](https://github.com/natasharp/fullstack2020-part6) | [Redux](https://fullstackopen.com/en/part6) |
+| [part7](https://github.com/natasharp/fullstack2020-part7) | [React router, custom hooks, styling app with CSS and webpack](https://fullstackopen.com/en/part7) |
+| [part8](https://github.com/natasharp/fullstack2020-part8) | [GraphQL](https://fullstackopen.com/en/part8) |
+| [part9](https://github.com/natasharp/fullstack2020-part9) | [TypeScript](https://fullstackopen.com/en/part9) |
 | part10 | [React Native](https://fullstackopen.com/en/part2) |
 | part11 | [CI/CD](https://fullstackopen.com/en/part2) |
